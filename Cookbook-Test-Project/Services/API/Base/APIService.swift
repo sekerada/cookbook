@@ -8,8 +8,8 @@
 
 import Foundation
 import Alamofire
-import ReactiveSwift
-import Result
+import RxSwift
+
 
 enum RequestError: Error {
     case network(NetworkError)
@@ -33,10 +33,9 @@ class APIService {
     }
 
     // MARK: Requests API
-
-    func request(_ path: String, method: Alamofire.HTTPMethod = .get, parameters: [String: Any]? = nil, encoding: ParameterEncoding = URLEncoding.default, headers: [String: String] = [:]) -> SignalProducer<Any?, NetworkError> {
+    func request(_ path: String, method: Alamofire.HTTPMethod = .get, parameters: [String: Any] = [:], encoding: ParameterEncoding = URLEncoding.default, headers: [String: String] = [:]) -> Observable<(Data?, NetworkError?)> {
         let resourceURL = self.resourceURL(for: path)
 
-        return network.request(resourceURL.absoluteString, method: method, parameters: parameters, encoding: encoding, headers: headers, useDisposables: false)
+        return network.request(resourceURL.absoluteString, method: method, parameters: parameters, encoding: encoding, headers: headers)
     }
 }

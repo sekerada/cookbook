@@ -6,12 +6,13 @@ use_frameworks!
 inhibit_all_warnings!
 
 target 'Cookbook' do
-
-pod 'ReactiveCocoa', '~> 8.0.0'
-pod 'ReactiveSwift', '~> 4.0.0'
 pod 'SnapKit', '~> 4.0.0'
 pod 'Alamofire', '~> 4.7.3'
 pod 'Reqres', '~> 2.2.0'
+pod 'SwiftyJSON', '~> 4.0'
+pod 'RxSwift',    '~> 4.0'
+pod 'RxCocoa',    '~> 4.0'
+pod 'PKHUD', '~> 5.0'
 
 end
 
