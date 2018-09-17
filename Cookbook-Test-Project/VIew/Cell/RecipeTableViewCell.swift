@@ -60,7 +60,8 @@ class RecipeTableViewCell: UITableViewCell {
         
         recipeImageView.snp.makeConstraints { (make) in
             make.left.equalTo(30)
-            make.top.equalToSuperview().offset(20)
+            make.centerY.equalToSuperview()
+            //make.top.equalToSuperview().offset(20)
             make.size.equalTo(CGSize(width: 96, height: 96))
         }
         

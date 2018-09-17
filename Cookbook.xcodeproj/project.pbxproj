@@ -20,8 +20,6 @@
 		34731B32214EAEA5001C22C1 /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34731B31214EAEA5001C22C1 /* RecipeDetailViewController.swift */; };
 		34731B36214EB371001C22C1 /* TextInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34731B35214EB371001C22C1 /* TextInputView.swift */; };
 		B4B815031E27831800C8A24B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B815021E27831800C8A24B /* AppDelegate.swift */; };
-		B4B815051E27831800C8A24B /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B815041E27831800C8A24B /* MasterViewController.swift */; };
-		B4B815071E27831800C8A24B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B815061E27831800C8A24B /* DetailViewController.swift */; };
 		B4B8150C1E27831800C8A24B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4B8150B1E27831800C8A24B /* Assets.xcassets */; };
 		B4B8150F1E27831800C8A24B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4B8150D1E27831800C8A24B /* LaunchScreen.storyboard */; };
 		B4B815191E2785D700C8A24B /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B815171E2785D700C8A24B /* APIService.swift */; };
@@ -46,8 +44,6 @@
 		9C9E934CE6D3099D02ED5692 /* Pods-Cookbook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cookbook.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cookbook/Pods-Cookbook.release.xcconfig"; sourceTree = "<group>"; };
 		B4B814FF1E27831800C8A24B /* Cookbook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cookbook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4B815021E27831800C8A24B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B4B815041E27831800C8A24B /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		B4B815061E27831800C8A24B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		B4B8150B1E27831800C8A24B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B4B8150E1E27831800C8A24B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B4B815101E27831800C8A24B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Cookbook-Test-Project/Info.plist"; sourceTree = "<group>"; };
@@ -118,15 +114,6 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		34731B33214EB20D001C22C1 /* old */ = {
-			isa = PBXGroup;
-			children = (
-				B4B815041E27831800C8A24B /* MasterViewController.swift */,
-				B4B815061E27831800C8A24B /* DetailViewController.swift */,
-			);
-			path = old;
-			sourceTree = "<group>";
-		};
 		34731B34214EB266001C22C1 /* VIew */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,7 +154,6 @@
 		D28696B32121D16C00DA769D /* Cookbook-Test-Project */ = {
 			isa = PBXGroup;
 			children = (
-				34731B33214EB20D001C22C1 /* old */,
 				34731B26214E6738001C22C1 /* Extensions */,
 				345845CA214E476D003777F2 /* FlowController */,
 				D28696B82121D20100DA769D /* Resources */,
@@ -363,9 +349,7 @@
 				345845C6214E3D62003777F2 /* RecipesListViewModel.swift in Sources */,
 				34731B28214E6752001C22C1 /* Colors.swift in Sources */,
 				B4B8151A1E2785D700C8A24B /* Network.swift in Sources */,
-				B4B815071E27831800C8A24B /* DetailViewController.swift in Sources */,
 				34731B25214E6449001C22C1 /* RecipeTableViewCell.swift in Sources */,
-				B4B815051E27831800C8A24B /* MasterViewController.swift in Sources */,
 				B4B8151C1E27AE9400C8A24B /* CookbookAPIService.swift in Sources */,
 				345845C9214E3E78003777F2 /* Recipe.swift in Sources */,
 				34731B2A214E983F001C22C1 /* RecipesListViewController.swift in Sources */,

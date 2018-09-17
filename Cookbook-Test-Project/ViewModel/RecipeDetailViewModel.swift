@@ -7,18 +7,19 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol RecipeDetailViewModelling {
-    var recipe: Recipe { get }
+    var recipe: Variable<Recipe> { get }
 }
 
 class RecipeDetailViewModel: RecipeDetailViewModelling {
     
-    var recipe: Recipe
+    var recipe: Variable<Recipe>
     let apiService : CookbookAPIServicing
 
     init(recipe: Recipe, apiService: CookbookAPIServicing) {
-        self.recipe = recipe
+        self.recipe = Variable<Recipe>(recipe)
         self.apiService = apiService
     }
 }

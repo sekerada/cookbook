@@ -71,7 +71,6 @@ class RecipesListViewController: UITableViewController {
     }
     
     // MARK: - UITableViewDataSource
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.recipes.value.count
     }
