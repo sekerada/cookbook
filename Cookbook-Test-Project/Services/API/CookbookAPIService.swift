@@ -14,11 +14,11 @@ protocol CookbookAPIServicing {
     //func getRecipes() -> SignalProducer<[Recipe],RequestError>
     func getRecipes() -> Observable<[Recipe]>
     func getRecipe(withId id: String) -> Observable<Recipe?>
+    func submitRecipeScore(recipeId id: String, score: Int)
 }
 
 /// Concrete class for creating api calls to our server
 class CookbookAPIService : APIService, CookbookAPIServicing {
-    
     
     private static let baseURL = URL(string: "https://cookbook.ack.ee/api/v1/")!
     
@@ -65,5 +65,9 @@ class CookbookAPIService : APIService, CookbookAPIServicing {
             })
             return Disposables.create()
         })
+    }
+    
+    func submitRecipeScore(recipeId id: String, score: Int) {
+        
     }
 }

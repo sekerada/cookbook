@@ -11,7 +11,7 @@ import SnapKit
 import RxSwift
 import RxCocoa
 
-class RecipeDetailViewController: UIViewController {
+class RecipeDetailViewController: UIViewController, UIScrollViewDelegate {
 
     weak var scrollView: UIScrollView!
     let viewModel: RecipeDetailViewModelling
@@ -23,6 +23,7 @@ class RecipeDetailViewController: UIViewController {
     var generalInfoVStack: UIStackView!
     var ingredientsVStack: UIStackView!
     var ingredientsLabel: UILabel!
+    var scoreStack: UIStackView!
     
     let informationLabel = UILabel()
     let descriptionLabel = UILabel()
@@ -69,7 +70,6 @@ class RecipeDetailViewController: UIViewController {
         nameLabel.font = UIFont.systemFont(ofSize: 24, weight: .semibold)
         nameLabel.textColor = UIColor.white
         nameLabel.numberOfLines = 0
-        scrollView.addSubview(nameLabel)
         
         headerRatingAndDurationView.snp.makeConstraints { (make) in
             make.left.equalToSuperview()
@@ -82,7 +82,6 @@ class RecipeDetailViewController: UIViewController {
         durationLabel.font = UIFont.systemFont(ofSize: 15)
         durationLabel.textAlignment = .right
         
-        
         headerRatingAndDurationView.addSubview(durationLabel)
         headerRatingAndDurationView.addSubview(scoreLabel)
         
@@ -91,10 +90,12 @@ class RecipeDetailViewController: UIViewController {
             make.centerY.equalToSuperview()
         }
         
+        scrollView.addSubview(nameLabel)
         nameLabel.snp.makeConstraints { (make) in
-            make.bottom.equalTo(headerRatingAndDurationView.snp.top).offset(-20)
+            make.bottom.equalTo(headerRatingAndDurationView.snp.top).offset(-40)
             make.left.equalToSuperview().offset(30)
-            make.right.equalToSuperview().offset(-60)
+            make.width.equalToSuperview().offset(-60)
+           // make.right.equalTo(view.)
         }
         
         scoreLabel.textAlignment = .left
@@ -102,7 +103,6 @@ class RecipeDetailViewController: UIViewController {
             make.left.equalToSuperview().offset(30)
             make.centerY.equalToSuperview()
         }
-        
         
         //MARK: General info stack
         informationLabel.tintColor = UIColor.cookbookBlack
@@ -141,19 +141,46 @@ class RecipeDetailViewController: UIViewController {
             descriptionSectionVStack
         ])
         generalInfoVStack.axis = .vertical
-        generalInfoVStack.spacing = 20
+        generalInfoVStack.spacing = 25
         scrollView.addSubview(generalInfoVStack)
-        
-//        descriptionLabel.snp.makeConstraints { (make) in
-//            make.left.equalToSuperview().offset(30)
-//            make.right.equalToSuperview().offset(-30)
-//        }
         
         generalInfoVStack.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
             make.top.equalTo(headerRatingAndDurationView.snp.bottom).offset(40)
             make.left.equalToSuperview().offset(30)
+            make.bottom.equalToSuperview()
         }
+        
+          //MARK: View Preparation for ratings
+//        let evaluationView = UIView()
+//        evaluationView.backgroundColor = UIColor.cookbookBlue
+//
+//        let scoreHStack = UIStackView()
+//        self.scoreStack = scoreHStack
+//        scoreHStack.spacing = 5
+//        for tag in 0..<5 {
+//            let scoreButton = UIButton()
+//            scoreButton.setBackgroundImage(#imageLiteral(resourceName: "ic_star_white"), for: .normal)
+//            scoreButton.tag = tag
+//            scoreHStack.addArrangedSubview(scoreButton)
+//            scoreButton.snp.makeConstraints { (make) in
+//                make.size.equalTo(48)
+//            }
+//        }
+//
+//        evaluationView.addSubview(scoreHStack)
+//        scrollView.addSubview(evaluationView)
+//        evaluationView.snp.makeConstraints { (make) in
+//            make.top.equalTo(generalInfoVStack.snp.bottom).offset(40)
+//            make.height.equalTo(100)
+//            make.left.width.equalToSuperview()
+//            make.bottom.equalToSuperview()
+//        }
+//
+//        scoreHStack.snp.makeConstraints { (make) in
+//            make.centerY.centerX.equalToSuperview()
+//        }
+
     }
     
     func setupBindings() {

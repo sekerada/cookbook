@@ -41,8 +41,9 @@ class RecipesListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(RecipeTableViewCell.self, forCellReuseIdentifier: "RecipeTableViewCell")
-        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
-        navigationItem.rightBarButtonItem = addButton
+        //MARK: Todo - not completely done NewRecipeView
+        // let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
+        //navigationItem.rightBarButtonItem = addButton
         self.navigationController?.navigationBar.isTranslucent = false
         navigationItem.title = "Recepty"
         tableView.separatorStyle = .none

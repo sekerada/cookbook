@@ -65,8 +65,6 @@ class NewRecipeViewController: UIViewController {
             nameInputView,
             initialTextInputView,
             ingredientsVStack,
-//            addIngredientButton
-//            procedureInputView
             ])
         topInformationVStack.axis = .vertical
         scrollView.addSubview(topInformationVStack)
@@ -88,7 +86,6 @@ class NewRecipeViewController: UIViewController {
             make.width.equalTo(82)
             make.height.equalTo(32)
         }
-        
         
         //MARK: Time picker view layout
         let timeLabel = UILabel()
@@ -155,18 +152,12 @@ class NewRecipeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         navigationItem.title = "Přidat recept"
         let rightBarButtonItem = UIBarButtonItem(title: "Přidat", style: .plain, target: nil, action: nil)
         navigationItem.rightBarButtonItem = rightBarButtonItem
         
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 }
 
 extension NewRecipeViewController: UIPickerViewDelegate, UIPickerViewDataSource {
@@ -177,7 +168,7 @@ extension NewRecipeViewController: UIPickerViewDelegate, UIPickerViewDataSource 
         return 15
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return "\(component*10)"
+        return "\(row*10)"
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         //viewmodel.neco...

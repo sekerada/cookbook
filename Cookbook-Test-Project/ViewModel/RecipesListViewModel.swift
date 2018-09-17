@@ -30,7 +30,6 @@ class RecipesListViewModel: RecipesListViewModeling {
     
     func loadRecipes() {
         apiService.getRecipes().subscribe(onNext: { recipes in
-            print("recipes.count = \(recipes.count)")
             self.recipes.value = recipes
         }, onError: { error in
             print("Error: load recipes")
